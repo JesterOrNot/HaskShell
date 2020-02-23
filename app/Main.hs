@@ -14,12 +14,14 @@ main = runInputT defaultSettings loop
   loop = do
     minput <- getInputLine "\x1b[35mHaskShell \x1b[32mλ \x1b[36m"
     outputStr "\x1b[m"
-    case minput of
-      Nothing     -> return ()
-      Just "exit" -> return ()
-      Just input  -> do
-        lift (runCmd input)
-        loop
+    shellEval minput loop
+
+shellEval minput loop = case minput of
+  Nothing     -> return ()
+  Just "exit" -> return ()
+  Just input  -> do
+    lift (runCmd input)
+    loop
 
 runCmd ""    = putStr ""
 runCmd input = do
