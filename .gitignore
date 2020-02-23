@@ -1,3 +1,5 @@
 .stack-work/
-HaskTerm.cabal
+**/*.hi
+**/*.o
+HaskShell.cabal
 *~

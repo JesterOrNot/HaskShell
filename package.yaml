@@ -1,6 +1,6 @@
-name:                HaskTerm
+name:                HaskShell
 version:             0.1.0.0
-github:              "JesterOrNot/HaskTerm"
+github:              "JesterOrNot/HaskShell"
 license:             MIT
 author:              "Sean Hellum"
 maintainer:          "seanhellum45@gmail.com"
@@ -24,7 +24,7 @@ library:
   source-dirs: src
 
 executables:
-  haskterm:
+  haskshell:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -32,7 +32,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - HaskTerm
+    - HaskShell
     - haskeline
     - process
     - transformers
@@ -46,4 +46,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - HaskTerm
+    - HaskShell

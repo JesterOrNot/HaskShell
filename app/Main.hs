@@ -12,7 +12,7 @@ main = runInputT defaultSettings loop
  where
   loop :: InputT IO ()
   loop = do
-    minput <- getInputLine "\x1b[35mHaskTerm \x1b[32mλ \x1b[36m"
+    minput <- getInputLine "\x1b[35mHaskShell \x1b[32mλ \x1b[36m"
     outputStr "\x1b[m"
     case minput of
       Nothing     -> return ()
