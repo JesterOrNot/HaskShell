@@ -23,5 +23,5 @@ main = runInputT defaultSettings loop
 
 runCmd ""    = putStr ""
 runCmd input = do
-  system input
+  system ("bash -c \"" ++ input ++ "\"")
   putStr ""
