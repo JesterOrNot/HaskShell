@@ -1,9 +1,6 @@
 module Main where
 
 import           Lib
-import           System.Process
-import           System.Exit
-import           Control.Monad.Trans.Class
 import           System.Console.Haskeline
 
 main :: IO ()
@@ -15,15 +12,3 @@ main = runInputT defaultSettings loop
     minput <- getInputLine "\x1b[35mHaskShell \x1b[32mλ \x1b[36m"
     outputStr "\x1b[m"
     shellEval minput loop
-
-shellEval minput loop = case minput of
-  Nothing     -> return ()
-  Just "exit" -> return ()
-  Just input  -> do
-    lift (runCmd input)
-    loop
-
-runCmd ""    = putStr ""
-runCmd input = do
-  system ("bash -c \"" ++ input ++ "\"")
-  putStr ""

@@ -22,6 +22,9 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+    - process
+    - transformers
 
 executables:
   haskshell:
@@ -34,8 +37,6 @@ executables:
     dependencies:
     - HaskShell
     - haskeline
-    - process
-    - transformers
 
 tests:
   test:

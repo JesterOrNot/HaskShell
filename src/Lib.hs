@@ -1,6 +1,21 @@
 module Lib
-    ( someFunc
-    ) where
+  ( runCmd
+  , shellEval
+  )
+where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import           Control.Monad.Trans.Class
+import           System.Process
+
+
+shellEval minput loop = case minput of
+  Nothing     -> return ()
+  Just "exit" -> return ()
+  Just input  -> do
+    lift (runCmd input)
+    loop
+
+runCmd ""    = putStr ""
+runCmd input = do
+  system ("bash -c \"" ++ input ++ "\"")
+  putStr ""
