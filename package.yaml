@@ -1,50 +1,37 @@
-name:                HaskShell
-version:             0.1.0.0
-github:              "JesterOrNot/HaskShell"
-license:             MIT
-author:              "Sean Hellum"
-maintainer:          "seanhellum45@gmail.com"
-
+name: HaskShell
+version: 0.1.0.0
+github: "JesterOrNot/HaskShell"
+license: MIT
+author: "Sean Hellum"
+maintainer: "seanhellum45@gmail.com"
 extra-source-files:
-- README.md
-
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
-
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
+  - README.md
 description: unix shell written in Haskell
-
 dependencies:
-- base >= 4.7 && < 5
-
+  - base >= 4.7 && < 5
 library:
   source-dirs: src
   dependencies:
     - process
     - transformers
-
 executables:
   haskshell:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - HaskShell
-    - haskeline
-
+      - HaskShell
+      - haskeline
 tests:
   test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - HaskShell
+      - HaskShell
