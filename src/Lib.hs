@@ -1,6 +1,6 @@
 module Lib
-  ( runCmd
-  , shellEval
+  ( runCmd,
+    shellEval
   )
 where
 
